@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Facebook, Github, Twitter } from '../components/AllSvgs'
 import styled from 'styled-components'
+import { Facebook, Github, LinkedIn } from '../components/AllSvgs'
 
 
 const Icons = styled.div`
@@ -14,6 +14,10 @@ bottom: 0;
 left: 2rem;
 
 z-index:5;
+
+&>*::not(:last-child){
+    margin: 0.5rem 0;
+}
 `
 
 const Line = styled.span`
@@ -26,20 +30,20 @@ const SocialIcons = () => {
     return (
         <Icons>
             <div>
-                <NavLink to="/">
-                    <Github width = {25} height={25} fill='currentColor' />
+                <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname:"https://github.com/the0therguy"}}>
+                    <Github width = {30} height={30} fill='currentColor' />
                 </NavLink>
             </div>
 
             <div>
-                <NavLink to="/">
-                    <Twitter width = {25} height={25} fill='currentColor' />
+                <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname:"https://www.facebook.com/ifty.chowdhury.3"}}>
+                    <Facebook width = {30} height={30} fill='currentColor' />
                 </NavLink>
             </div>
 
             <div>
-                <NavLink to="/">
-                    <Facebook width = {25} height={25} fill='currentColor' />
+                <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname: "https://www.linkedin.com/in/ifty-chowdhuryy/"}}>
+                    <LinkedIn width = {30} height={30} fill='currentColor' />
                 </NavLink>
             </div>
 
