@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import LogoComponent from "../SubComponents/LogoComponent";
 import SocialIcons from "../SubComponents/SocialIcons";
+import About from "./AboutPage";
+import {YinYang} from "./AllSvgs";
 
 
 const MainContainer = styled.div`
@@ -12,7 +14,7 @@ height: 100vh;
 overflow:hidden;
   position: relative;
   
-  h2,h3,h4,h5,h6{
+  h2,h2,h4,h5,h6{
     font-family: 'Karla', sans-serif;
     font-weight: 500;
     
@@ -43,6 +45,71 @@ z-index:1;
 
 `
 
+const WORK = styled(NavLink)`
+color: ${props => props.theme.text};
+position: absolute;
+top: 50%;
+left: calc(1rem + 2vw);
+transform:translate(-50%, -50%) rotate(-90deg);
+text-decoration: none;
+z-index:1;
+
+`
+const BottomBar = styled.div`
+position: absolute;
+bottom: 2rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-evenly;
+`
+
+const ABOUT = styled(NavLink)`
+    color: ${props=>props.theme.text};
+  text-decoration: none;
+  z-index: 1;
+`
+
+const SKILLS = styled(NavLink)`
+    color: ${props=>props.theme.text};
+  text-decoration: none;
+  z-index: 1;
+`
+
+const rotate = keyframes`
+from{
+  transform: rotate(0);
+}
+to{
+  transform: rotate(360deg);
+}`
+
+const Center = styled.button`
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  &>:first-child{
+    animation: ${rotate} infinite 2.5s linear;
+  }
+  
+  &>:last-child{
+    padding-top: 1rem;
+  }
+`
+
 const Main = () => {
     return (
         <MainContainer>
@@ -50,18 +117,38 @@ const Main = () => {
               {/* <PowerButton/> */}
               <LogoComponent/>
               <SocialIcons/>
+                <Center>
+                    <YinYang width={180} height={180} fill='currentColor'/>
+                    <span>Click Here</span>
+                </Center>
               <Contact target="_blank" to={{pathname:"mailto:ifty545@gmail.com"}}>
-                <h3>
+                <h2>
                   Say Hi...
-                </h3>
+                </h2>
               </Contact>
               <BLOG target="_blank" to={{pathname:"/blog"}}>
-                <h3>
+                <h2>
                 Blog
-                </h3>
-                
+                </h2>             
               </BLOG>
+              <WORK target="_blank" to={{pathname:"/work"}}>
+                <h2>
+                  Work
+                </h2>
+              </WORK>
+              <BottomBar>
+                  <ABOUT to="/about">
+                      <h2>
+                          About
+                      </h2>
+                  </ABOUT>
+                  <SKILLS to="/skills">
+                      <h2>
+                          Skills
+                      </h2>
+                  </SKILLS>
 
+              </BottomBar>
             </Container>
         </MainContainer>
     )
