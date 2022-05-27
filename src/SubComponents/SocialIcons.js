@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { Facebook, Github, LinkedIn } from '../components/AllSvgs'
+import {DarkTheme} from "../components/Themes"
 
 
 const Icons = styled.div`
@@ -15,7 +16,7 @@ left: 2rem;
 
 z-index:5;
 
-&>*::not(:last-child){
+&>*:not(:last-child){
     margin: 0.5rem 0;
 }
 `
@@ -23,31 +24,31 @@ z-index:5;
 const Line = styled.span`
 width: 2px;
 height: 10rem;
-background-color: ${props => props.theme.text};
+background-color: ${props => props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
 `
-const SocialIcons = () => {
+const SocialIcons = (props) => {
 
     return (
         <Icons>
             <div>
                 <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname:"https://github.com/the0therguy"}}>
-                    <Github width = {30} height={30} fill='currentColor' />
+                    <Github width = {30} height={30} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body } />
                 </NavLink>
             </div>
 
             <div>
                 <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname:"https://www.facebook.com/ifty.chowdhury.3"}}>
-                    <Facebook width = {30} height={30} fill='currentColor' />
+                    <Facebook width = {30} height={30} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body } />
                 </NavLink>
             </div>
 
             <div>
                 <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname: "https://www.linkedin.com/in/ifty-chowdhuryy/"}}>
-                    <LinkedIn width = {30} height={30} fill='currentColor' />
+                    <LinkedIn width = {30} height={30} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body } />
                 </NavLink>
             </div>
 
-            <Line/>
+            <Line color = {props.theme}/>
         </Icons>
     )
 }

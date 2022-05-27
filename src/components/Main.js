@@ -1,9 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 import styled, {keyframes} from "styled-components";
 import LogoComponent from "../SubComponents/LogoComponent";
 import SocialIcons from "../SubComponents/SocialIcons";
-import About from "./AboutPage";
 import {YinYang} from "./AllSvgs";
 
 
@@ -46,7 +45,7 @@ z-index:1;
 `
 
 const WORK = styled(NavLink)`
-color: ${props => props.theme.text};
+  color: ${props=>props.click ? props.theme.body : props.theme.text};
 position: absolute;
 top: 50%;
 left: calc(1rem + 2vw);
@@ -67,7 +66,7 @@ bottom: 2rem;
 `
 
 const ABOUT = styled(NavLink)`
-    color: ${props=>props.theme.text};
+    color: ${props=>props.click ? props.theme.body : props.theme.text};
   text-decoration: none;
   z-index: 1;
 `
@@ -88,8 +87,8 @@ to{
 
 const Center = styled.button`
 position: absolute;
-  top: 50%;
-  left: 50%;
+  top: ${props => props.click ? "85%":"50%" };
+  left: ${props => props.click ? "92%":"50%" };
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
@@ -100,25 +99,45 @@ position: absolute;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 1s ease;
   
   &>:first-child{
     animation: ${rotate} infinite 2.5s linear;
   }
   
   &>:last-child{
+    display: ${props => props.click ? "none" : "inline-block" };
     padding-top: 1rem;
   }
 `
 
+const DarkDiv = styled.div`
+position: absolute;
+top: 0;
+  background-color: #000;
+  bottom: 0;
+  right: 50%;
+  width: ${props => props.click ? "50%" : "0%" };
+  height: ${props => props.click ? "100%" : "0%" };
+  z-index: 1;
+  transition: 0.5s ease, width 1s ease 0.5s;
+`
+
 const Main = () => {
+
+    const [click, setClick] = useState(false);
+
+    const handleClick = () => setClick(!click);
+
     return (
         <MainContainer>
+            <DarkDiv click={click} />
             <Container>
               {/* <PowerButton/> */}
-              <LogoComponent/>
-              <SocialIcons/>
-                <Center>
-                    <YinYang width={180} height={180} fill='currentColor'/>
+              <LogoComponent theme={click ? 'dark' : 'light' }/>
+              <SocialIcons theme={click ? 'dark' : 'light' }/>
+                <Center click={click}>
+                    <YinYang onClick={()=> handleClick()} width={click ? 120 : 200} height={click ? 120: 200} fill='currentColor'/>
                     <span>Click Here</span>
                 </Center>
               <Contact target="_blank" to={{pathname:"mailto:ifty545@gmail.com"}}>
@@ -131,13 +150,13 @@ const Main = () => {
                 Blog
                 </h2>             
               </BLOG>
-              <WORK target="_blank" to={{pathname:"/work"}}>
+              <WORK target="_blank" to={{pathname:"/work"}} click={click}>
                 <h2>
                   Work
                 </h2>
               </WORK>
               <BottomBar>
-                  <ABOUT to="/about">
+                  <ABOUT to="/about" click={click}>
                       <h2>
                           About
                       </h2>

@@ -1,6 +1,6 @@
 import GlobalStyle from "./globalStyle";
 import {ThemeProvider} from "styled-components";
-import {lightTheme, darkTheme} from "./components/Themes";
+import {lightTheme, DarkTheme} from "./components/Themes";
 import {Route, Switch} from "react-router-dom";
 import Main from "./components/Main";
 import AboutPage from "./components/AboutPage";
