@@ -4,7 +4,8 @@ import styled, {keyframes} from "styled-components";
 import LogoComponent from "../SubComponents/LogoComponent";
 import SocialIcons from "../SubComponents/SocialIcons";
 import {YinYang} from "./AllSvgs";
-
+import Intro from "./Intro";
+import {motion} from "framer-motion";
 
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
@@ -141,14 +142,20 @@ const Main = () => {
                     <span>Click Here</span>
                 </Center>
               <Contact target="_blank" to={{pathname:"mailto:ifty545@gmail.com"}}>
-                <h2>
+                <motion.h2
+                whileHover={{scale: 1.1}}
+                whileTap={{scale:0.9}}
+                >
                   Say Hi...
-                </h2>
+                </motion.h2>
               </Contact>
               <BLOG target="_blank" to={{pathname:"/blog"}}>
-                <h2>
+                <motion.h2
+                    whileHover={{scale: 1.1}}
+                    whileTap={{scale:0.9}}
+                >
                 Blog
-                </h2>             
+                </motion.h2>
               </BLOG>
               <WORK target="_blank" to={{pathname:"/work"}} click={click}>
                 <h2>
@@ -157,18 +164,25 @@ const Main = () => {
               </WORK>
               <BottomBar>
                   <ABOUT to="/about" click={click}>
-                      <h2>
+                      <motion.h2
+                          whileHover={{scale: 1.1}}
+                          whileTap={{scale:0.9}}
+                      >
                           About
-                      </h2>
+                      </motion.h2>
                   </ABOUT>
                   <SKILLS to="/skills">
-                      <h2>
+                      <motion.h2
+                          whileHover={{scale: 1.1}}
+                          whileTap={{scale:0.9}}
+                      >
                           Skills
-                      </h2>
+                      </motion.h2>
                   </SKILLS>
 
               </BottomBar>
             </Container>
+            {click ? <Intro click={click} /> : null}
         </MainContainer>
     )
 }
