@@ -149,14 +149,14 @@ const Main = () => {
                   Say Hi...
                 </motion.h2>
               </Contact>
-              <BLOG target="_blank" to={{pathname:"/blog"}}>
-                <motion.h2
-                    whileHover={{scale: 1.1}}
-                    whileTap={{scale:0.9}}
-                >
-                Blog
-                </motion.h2>
-              </BLOG>
+              {/*<BLOG target="_blank" to={{pathname:"/blog"}}>*/}
+              {/*  <motion.h2*/}
+              {/*      whileHover={{scale: 1.1}}*/}
+              {/*      whileTap={{scale:0.9}}*/}
+              {/*  >*/}
+              {/*  Blog*/}
+              {/*  </motion.h2>*/}
+              {/*</BLOG>*/}
               <WORK target="_blank" to={{pathname:"/work"}} click={click}>
                 <h2>
                   Work
