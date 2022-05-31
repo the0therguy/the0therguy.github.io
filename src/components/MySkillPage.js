@@ -80,12 +80,11 @@ color: ${props => props.theme.text};
 const MySkillPage = () => {
     return (
             <ThemeProvider theme={lightTheme}>
-                <PowerButton/>
                 <LogoComponent theme='light'/>
-
+                <PowerButton/>
+                <SocialIcons theme='light'/>
                 <Box>
                     <ParticleComponent theme="light"/>
-                    <SocialIcons theme='light'/>
                     <Main>
                         <Title>
                             <Develope width={40} height={40}/>
