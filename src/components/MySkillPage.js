@@ -7,6 +7,7 @@ import postgresql from "../assets/elephant.png"
 import LogoComponent from "../SubComponents/LogoComponent";
 import SocialIcons from "../SubComponents/SocialIcons";
 import PowerButton from "../SubComponents/PowerButton";
+import ParticleComponent from "../SubComponents/ParticleComponent";
 
 const Box = styled.div`
   background-color: ${props => props.theme.body};
@@ -80,10 +81,11 @@ const MySkillPage = () => {
     return (
             <ThemeProvider theme={lightTheme}>
                 <PowerButton/>
-                <LogoComponent />
+                <LogoComponent theme='light'/>
 
                 <Box>
-                    <SocialIcons/>
+                    <ParticleComponent theme="light"/>
+                    <SocialIcons theme='light'/>
                     <Main>
                         <Title>
                             <Develope width={40} height={40}/>
