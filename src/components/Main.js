@@ -6,7 +6,6 @@ import SocialIcons from "../SubComponents/SocialIcons";
 import {CVLogo, YinYang} from "./AllSvgs";
 import Intro from "./Intro";
 import {motion} from "framer-motion";
-import ReadCV from "../SubComponents/MyCV";
 
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
@@ -26,7 +25,7 @@ const Container = styled.div`
 padding: 2rem;
 `
 
-const Contact = styled(NavLink)`
+const CV = styled(NavLink)`
 color: ${props => props.theme.text};
 position: absolute;
 top: 2rem;
@@ -136,21 +135,20 @@ const Main = () => {
         <MainContainer>
             <DarkDiv click={click} />
             <Container>
-              {/* <PowerButton/> */}
               <LogoComponent theme={click ? 'dark' : 'light' }/>
               <SocialIcons theme={click ? 'dark' : 'light' }/>
                 <Center click={click}>
                     <YinYang onClick={()=> handleClick()} width={click ? 120 : 200} height={click ? 120: 200} fill='currentColor'/>
                     <span>Click Here</span>
                 </Center>
-              <Contact target="_blank" to={{pathname:"/mycv"}} clic={click}>
+              <CV target="_blank" to={{pathname:"/mycv"}} click={click}>
                 <motion.h2
                 whileHover={{scale: 1.1}}
                 whileTap={{scale:0.9}}
                 >
                   <CVLogo width={90} height={90}/>
                 </motion.h2>
-              </Contact>
+              </CV>
               {/*<BLOG target="_blank" to={{pathname:"/blog"}}>*/}
               {/*  <motion.h2*/}
               {/*      whileHover={{scale: 1.1}}*/}
