@@ -6,7 +6,6 @@ import C_Plus from "../assets/c-logo-png-transparent.png"
 import postgresql from "../assets/elephant.png"
 import LogoComponent from "../SubComponents/LogoComponent";
 import SocialIcons from "../SubComponents/SocialIcons";
-import PowerButton from "../SubComponents/PowerButton";
 import ParticleComponent from "../SubComponents/ParticleComponent";
 
 const Box = styled.div`
@@ -81,7 +80,6 @@ const MySkillPage = () => {
     return (
             <ThemeProvider theme={lightTheme}>
                 <LogoComponent theme='light'/>
-                <PowerButton/>
                 <SocialIcons theme='light'/>
                 <Box>
                     <ParticleComponent theme="light"/>
