@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import styled, {keyframes, ThemeProvider} from "styled-components";
+import styled, {ThemeProvider} from "styled-components";
 import {DarkTheme} from "./Themes";
 import LogoComponent from "../SubComponents/LogoComponent";
 import SocialIcons from "../SubComponents/SocialIcons";

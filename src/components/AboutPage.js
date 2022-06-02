@@ -3,7 +3,6 @@ import styled, {keyframes, ThemeProvider} from "styled-components";
 import {DarkTheme} from "./Themes";
 import LogoComponent from "../SubComponents/LogoComponent";
 import SocialIcons from "../SubComponents/SocialIcons";
-import PowerButton from "../SubComponents/PowerButton";
 import ParticleComponent from "../SubComponents/ParticleComponent";
 import astronaut from "../assets/Images/spaceman.png"
 
