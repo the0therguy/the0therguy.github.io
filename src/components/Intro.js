@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Me from "../assets/Images/profile-img.png"
+import Me from "../assets/Images/1647021841455__01.jpg"
 import {motion} from "framer-motion";
 
 const Box = styled(motion.div)`
@@ -39,7 +39,7 @@ const SubBox = styled.div`
     bottom: 0;
     left: 50%;
     transform: translate(-50%,0%);
-    width: 100%;
+    width: 101%;
     height: auto;
   }
 `

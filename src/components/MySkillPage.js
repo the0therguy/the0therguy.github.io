@@ -7,6 +7,14 @@ import postgresql from "../assets/elephant.png"
 import LogoComponent from "../SubComponents/LogoComponent";
 import SocialIcons from "../SubComponents/SocialIcons";
 import ParticleComponent from "../SubComponents/ParticleComponent";
+import python from "../assets/pyhton-logo.png"
+import js from "../assets/javascript-js-logo-2949701702-seeklogo.com.png"
+import C from "../assets/c-programming.png"
+import html from "../assets/html.png"
+import CSS from "../assets/css.png"
+import MySQL from "../assets/mysql.png"
+import SQlite from "../assets/sqlite.png"
+import django from "../assets/django.png"
 
 const Box = styled.div`
   background-color: ${props => props.theme.body};
@@ -95,30 +103,30 @@ const MySkillPage = () => {
                             <strong>Language</strong>
                             <div>
                                 <p>
-                                    <img className="python" height={45} src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" title="python" alt="python" />
+                                    <img className="python" height={45} src={python} title="python" alt="Python" />
                                     &nbsp;
-                                    <img title="JavaScript" height={45} src="https://seeklogo.com/images/J/javascript-js-logo-2949701702-seeklogo.com.png" alt="JavaScript" />
+                                    <img title="JavaScript" height={45} src={js} alt="JavaScript" />
                                     &nbsp;
-                                    <img title="c" height={45} src="https://img.icons8.com/color/48/000000/c-programming.png" alt="C"/>
+                                    <img title="c" height={45} src={C} alt="C"/>
                                     &nbsp;
                                     <img title="c++" height={45} src={C_Plus} alt="C++"/>
                                     &nbsp;
-                                    <img title="HTML5" alt="HTML5" width={45} src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
+                                    <img title="HTML5" alt="HTML5" width={45} src={html} />
                                     &nbsp;
-                                    <img title="CCS3" alt="CSS3" width={45} src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
+                                    <img title="CCS3" alt="CSS3" width={45} src={CSS} />
                                 </p>
                             </div>
                             <strong>Database</strong>
                             <p>
-                                <img title="MySQL" height="45" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png" alt="MySQL"/>
+                                <img title="MySQL" height="45" src={MySQL} alt="MySQL"/>
                                 &nbsp;
-                                <img title="SQLite" height="45" src="https://raw.githubusercontent.com/github/explore/2d218e3aa252dc90eef269b34eeec1fbd15dc07e/topics/sqlite/sqlite.png" alt="SQLite"/>
+                                <img title="SQLite" height="45" src={SQlite} alt="SQLite"/>
                                 &nbsp;
                                 <img title="PostgreSQL" height={45} src={postgresql} alt="PostgreSQL"/>
                             </p>
                             <strong>Framework or Libraries</strong>
                             <p>
-                                <img title="Django" height={45} src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/django/django.png" alt="Django"/>
+                                <img title="Django" height={45} src={django} alt="Django"/>
                                 &nbsp;
                                 <img title="Django REST" height="45" src="https://ksr-ugc.imgix.net/assets/011/705/984/4ea78430d3ad7dc88106a7b973248ba7_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1552&h=873&fit=crop&v=1463687041&auto=format&frame=1&q=92&s=022bf4c5b7efa27ab20395c0da4eff7b" alt="DjangoRestFramework"/>
                                 &nbsp;
