@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import {Facebook, Github, LeetCode, LinkedIn} from '../components/AllSvgs'
+import {Facebook, Github, LeetCode, LeetCodeBnW, LinkedIn, LinkedInBnW} from '../components/AllSvgs'
 import {DarkTheme} from "../components/Themes"
 
 
@@ -44,13 +44,13 @@ const SocialIcons = (props) => {
 
             <div>
                 <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname: "https://www.linkedin.com/in/ifty-chowdhuryy/"}}>
-                    <LinkedIn width = {30} height={30} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body } />
+                    <LinkedInBnW width = {30} height={30} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body } />
                 </NavLink>
             </div>
 
             <div>
                 <NavLink style={{color: 'inherit'}} target="_blank" to={{pathname: "https://leetcode.com/nblues399/"}}>
-                    <LeetCode width = {30} height={30} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body } />
+                    <LeetCodeBnW width = {30} height={30} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body } />
                 </NavLink>
             </div>
 
