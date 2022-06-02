@@ -7,6 +7,7 @@ import AboutPage from "./components/AboutPage";
 import WorkPage from "./components/WorkPage";
 import BlogPage from "./components/BlogPage";
 import MySkillPage from "./components/MySkillPage";
+import MyCV from "./SubComponents/MyCV";
 
 function App() {
     return <>
@@ -18,6 +19,7 @@ function App() {
                     <Route exact path="/work" component={WorkPage}/>
                     <Route exact path="/blog" component={BlogPage}/>
                     <Route exact path="/skills" component={MySkillPage}/>
+                    <Route exact path="/mycv" component={MyCV}/>
                 </Switch>
             </ThemeProvider>
     </>

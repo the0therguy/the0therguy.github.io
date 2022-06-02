@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 import styled, {keyframes} from "styled-components";
 import LogoComponent from "../SubComponents/LogoComponent";
 import SocialIcons from "../SubComponents/SocialIcons";
-import {YinYang} from "./AllSvgs";
+import {CVLogo, YinYang} from "./AllSvgs";
 import Intro from "./Intro";
 import {motion} from "framer-motion";
+import ReadCV from "../SubComponents/MyCV";
 
 const MainContainer = styled.div`
 background: ${props => props.theme.body};
@@ -130,6 +131,7 @@ const Main = () => {
 
     const handleClick = () => setClick(!click);
 
+
     return (
         <MainContainer>
             <DarkDiv click={click} />
@@ -141,12 +143,12 @@ const Main = () => {
                     <YinYang onClick={()=> handleClick()} width={click ? 120 : 200} height={click ? 120: 200} fill='currentColor'/>
                     <span>Click Here</span>
                 </Center>
-              <Contact target="_blank" to={{pathname:"mailto:ifty545@gmail.com"}}>
+              <Contact target="_blank" to={{pathname:"/mycv"}} clic={click}>
                 <motion.h2
                 whileHover={{scale: 1.1}}
                 whileTap={{scale:0.9}}
                 >
-                  Say Hi...
+                  <CVLogo width={90} height={90}/>
                 </motion.h2>
               </Contact>
               {/*<BLOG target="_blank" to={{pathname:"/blog"}}>*/}

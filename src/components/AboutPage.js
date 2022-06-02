@@ -38,7 +38,7 @@ position: inherit;
 const Main = styled.div`
 border: 2px solid ${props => props.theme.text};
   color: ${props => props.theme.text};
-  padding: 2 rem;
+  padding: 2rem;
   width: 50vw;
   height: 35vh;
   z-index: 3;
@@ -60,7 +60,7 @@ border: 2px solid ${props => props.theme.text};
 const Main1 = styled.div`
   border: 2px solid ${props => props.theme.text};
   color: ${props => props.theme.text};
-  padding: 2 rem;
+  padding: 2rem;
   width: 23vw;
   height: 20vh;
   z-index: 3;
@@ -82,7 +82,7 @@ const Main1 = styled.div`
 const Main2 = styled.div`
   border: 2px solid ${props => props.theme.text};
   color: ${props => props.theme.text};
-  padding: 2 rem;
+  padding: 2rem;
   width: 23vw;
   height: 20vh;
   z-index: 3;
